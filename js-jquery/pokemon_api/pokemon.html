@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pokemon</title>
+    <link rel="stylesheet" type="text/css" href="pokemon.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('form').submit(function (e) {
+                e.preventDefault();
+                $.get("https://pokeapi.co/api/v2/pokemon/" + $('input[name="poke"]').val() + "/", function (pokemon) {
+                    console.log(pokemon.sprites.front_default);
+                    var html_str = "<tr>";
+                    html_str += "<td>" + pokemon.id + "</td>";
+                    html_str += "<td>" + pokemon.name + "</td>";
+                    html_str += "<td>" + pokemon.height + "</td>";
+                    html_str += "<td>" + pokemon.weight + "</td>";
+                    html_str += "<td><img src='" + pokemon.sprites.front_default + "'></td>";
+                    html_str += "</tr>";
+                    $('tbody').append(html_str);
+                }, 'json');
+            })
+            $(document).ready(function () {
+                for (var i = 1; i < 722; i++) {
+                    $('.bottom').append(`<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/${i}.png">`)
+                }
+            })
+        });
+    </script>
+</head>
+
+<body>
+    <div class="top">
+        <div id="tleft"><table style="border: 1px solid black">
+            <thead>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Height</th>
+                <th>Weight</th>
+                <th>Picture</th>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <form id="pokemon">
+            Who's that POKEMON!?
+            <input name="poke" type="number">
+            <button>Submit</button>
+        </form>
+        </div>
+        <div id="tright">
+            <h1>Sam's Personal Pokedex</h1>
+        </div>
+    </div>
+    <div class="bottom"></div>
+</body>
+
+</html>

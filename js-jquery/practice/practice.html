@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript" src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+        // adding in content when clicking
+            $('h1').click(function () {
+                var html_str = "<h1>Todd is awesome<h1>";
+                $('body').append(html_str);
+            });
+        // dynamically created content. adding content when click anywhere
+            $('body').on('click','h1', function(){
+                var html_str = "<h1>Todd is awesome<h1>";
+                $('body').append(html_str);
+            });
+        // forms assignemnt
+            $('form').submit(function(){
+                console.log($('input[name="first_name"]').val())
+                return false;
+            })
+        })
+    </script>
+</head>
+<body>
+    <h1 id="hello">Hello World</h1>
+    <h1 id="amazon">Hello Amazon</h1>
+    <h1 id="moto">Hello Moto</h1>
+    <button>Revive</button>
+
+        <!--users assignemnt-->
+    <form action="/create_users" method="post">
+        <input type="text" name="first_name" placeholder="First Name">
+        <input type="text" name="last_name" placeholder="Last Name">
+        <input type="submit" value="Submit">
+    </form>
+</body>
+
+</html>

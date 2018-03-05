@@ -1,0 +1,32 @@
+*{
+    outline: pink 1px;
+}
+
+.top{
+    display: inline-block;
+    width: 100%;
+    vertical-align: center;
+    padding: 5px;
+    margin-bottom: 15px;
+}
+
+#tleft{
+    width: 400px;
+    height: auto;
+    display: inline-block;
+}
+
+#tright{
+    background-color: green;
+    font-family: arial;
+    width: auto;
+    height: 75px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+img{
+    border: solid black 1px;
+    margin: 3px;
+    padding: 1px;
+}

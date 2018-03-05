@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weather Map</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var id = $('input[name="city"]')
+            var API = "51b5b5025bec0a9dc32b4fd97c72bf59"
+            $('form').submit(function (wmp) {
+                wmp.preventDefault();
+                // your code here (build up your url)
+                $.get("http://api.openweathermap.org/data/2.5/weather?q=" + id + "&units=imperial" + "&&appid=" + API, function (wmp) {
+                    var html_str = "";
+                    html_str += "<h1>" + wmp.name + "</h1>";
+                    html_str += "<p>" + "Temperature:" + wmp.id + "</p>";
+                        $('#bottom').append(html_str);
+                }, 'json');
+                // don't forget to return false so the page doesn't refresh
+                return false;
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="top">
+        <form>
+            <input type="text" name="city" placeholder="Enter City, State, or ZIP">
+            <button>Search Weather</button>
+        </form>
+    </div>
+    <div id="bottom">
+    </div>
+</body>
+
+</html>

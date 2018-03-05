@@ -1,0 +1,80 @@
+.gray{
+    background-color: gray;
+    height: 400px;
+    width: 400px;
+    padding: 25px;
+    border-color: black;
+    border-style: solid;
+    margin: auto;
+}
+
+.red div {
+    background-color: red;
+    width: 185px;
+    height: 75px;
+    display: inline-block;
+    border-color: black;
+    border-style: solid;
+    margin-right: 5px;
+}
+
+.blue{
+    background-color: lightblue;
+    border-color: black;
+    border-style: solid;
+    width: 400px;
+    height: 75px;
+    margin: auto;
+    display: inline-block;
+}
+
+.yellow{
+    background-color: yellow;
+    border-color: black;
+    border-style: solid;
+    width: 75px;
+    height: 50px;
+    margin: auto;
+    display: inline-block;
+}
+
+.yellow2{
+    background-color: yellow;
+    border-color: black;
+    border-style: solid;
+    width: 75px;
+    height: 50px;
+    display: inline-block;
+    margin: auto;
+}
+
+.yellow3{
+    background-color: yellow;
+    border-color: black;
+    border-style: solid;
+    width: 75px;
+    height: 50px;
+    float: right;
+    margin: auto;
+    display: inline-block;
+}
+
+.green{
+    background-color: green;
+    border-color: black;
+    border-style: solid;
+    width: 400px;
+    margin: auto;
+    display: inline-block;
+    padding: 10px;
+}
+
+.purple{
+    background-color: purple;
+    border-color: black;
+    border-style: solid;
+    height: 100px;
+    width: 100px;
+    display: inline-block;
+    margin: auto;
+}
