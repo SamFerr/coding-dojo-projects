@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title></title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-    </head>
-    <body>
-        <h1>Amadon Store</h1>
-        <table>
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Amadon Store!</h1>
+        <table class="table">
             <thead>
                 <tr>
                     <th>Item</th>
@@ -23,17 +28,19 @@
                     <td>
                         <form action="/buy/{{ item.id }}" method="POST">
                             {% csrf_token %}
-                            <select name='quantity'>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                            </select>
-                            <button type="submit">Buy!</button>
+                                <select name='quantity'>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>  
+                            <button type="submit">Add to Cart</button>
                         </form>
                     </td>
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
-    </body>
+    </div>
+</body>
+
 </html>

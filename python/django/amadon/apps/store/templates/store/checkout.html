@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title></title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-    </head>
-    <body>
-        <h1>Thank you for your business!</h1>
-        {% if request.session.last_transaction %}
-        <h3>We charged your credit card ${{ request.session.last_transaction }}</h3>
-        {% else %}
-        <h3>Go buy more stuff!</h3>
-        {% endif %}
-        <p>You have ordered {{ request.session.total_items }} item(s) and spent ${{ request.session.total_charged }} with Amadon.com!</p>
-        <a href="/">Go back</a>
-    </body>
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="text-center">
+            <h1>Thank you for your business!</h1>
+            {% if request.session.last_transaction %}
+            <h3>You have added _{{ request.session.item.name }}_ for ${{ request.session.last_transaction }}</h3>
+            {% endif %}
+            <p>You have {{ request.session.total_items }} item(s) in your cart for a total of ${{ request.session.total_charged }} with Amadon.com!</p>
+            <a href="/">Go back</a>
+        </div>
+    </div>
+</body>
+
 </html>
