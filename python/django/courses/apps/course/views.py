@@ -9,7 +9,7 @@ def index(request):
     context = {
         "courses": Course.objects.all()
     }
-    return render(request, 'courses/index.html', context)
+    return render(request, 'course/index.html', context)
 
 def create(request):
     errors = Course.objects.validate(request.POST)
@@ -27,7 +27,7 @@ def confirm(request, course_id):
     context = {
         "course": Course.objects.get(id=course_id)
     }
-    return render(request, 'courses/confirm.html', context)
+    return render(request, 'course/confirm.html', context)
 
 def delete(request, course_id):
     Course.objects.get(id=course_id).delete()
